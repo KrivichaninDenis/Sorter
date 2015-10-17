@@ -2,7 +2,7 @@
 using Sorter.AbstractElements;
 using Sorter.SwapAndWrite;
 
-namespace Sorter.SortingType
+namespace Sorter.Algorithms
 {
     class InclusionSort<T>:AbstractClass<T> where T : IComparable
     {

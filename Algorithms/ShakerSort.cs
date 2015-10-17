@@ -2,7 +2,7 @@
 using Sorter.AbstractElements;
 using Sorter.SwapAndWrite;
 
-namespace Sorter.SortingType
+namespace Sorter.Algorithms
 {
     class ShakerSort<T> : AbstractClass<T> where T : IComparable
     {

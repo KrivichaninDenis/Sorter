@@ -2,8 +2,7 @@
 using Sorter.AbstractElements;
 using Sorter.SwapAndWrite;
 
-
-namespace Sorter.SortingType
+namespace Sorter.Algorithms
 {
     class SelectionSort<T>: AbstractClass<T> where T:IComparable
     {

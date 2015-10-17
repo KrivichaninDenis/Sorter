@@ -6,7 +6,7 @@ namespace Sorter
     {
         public double IntValue { get; private set; }
 
-        public OneElement(int value)
+        public OneElement(double value)
         {
             IntValue = value;
         }
