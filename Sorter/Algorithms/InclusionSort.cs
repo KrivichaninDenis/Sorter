@@ -1,27 +1,26 @@
-﻿using System;
-using Sorter.AbstractElements;
-using Sorter.SwapAndWrite;
+﻿using System.Collections.Generic;
+using MasSortLibrary.AbstractElements;
+using MasSortLibrary.SwapAndWrite;
 
-namespace Sorter.Algorithms
+namespace MasSortLibrary.Algorithms
 {
-    public class InclusionSort<T>:AbstractClass<T> where T : IComparable
+    public class InclusionSort<T>:AbstractClass<T> 
     {
-        protected override void SortAlgorithm()
+        public override void Sort(List<T> mas, IComparer<T> baseOrNewComparator)
         {
-             var copyMas = Mas;
+            var copyMas = mas;
             for (var i = 1; i < copyMas.Count; i++)
             {
-                if (copyMas[i].CompareTo(copyMas[i - 1]) >= 0) continue;
-                var j = i;                    
+                if (baseOrNewComparator.Compare(copyMas[i],copyMas[i - 1])>=0) continue;
+                var j = i;
                 do
                 {
-                         
-                    SwapItems.Swap(Mas,j, j - 1);
-                       
-                    j--;                       
+
+                    SwapItems.Swap(mas, j, j - 1);
+
+                    j--;
                     if (j == 0) break;
-                }
-                while (copyMas[j].CompareTo(copyMas[j - 1]) < 0);
+                } while (baseOrNewComparator.Compare(copyMas[j], copyMas[j - 1]) < 0);
             }
         }
 

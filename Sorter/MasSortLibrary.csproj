@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractElements\AbstractClass.cs" />
+    <Compile Include="Comparator\BaseComparator.cs" />
+    <Compile Include="Comparator\NewComparator.cs" />
     <Compile Include="Algorithms\BubbleSort.cs" />
     <Compile Include="OneElementInList\OneElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

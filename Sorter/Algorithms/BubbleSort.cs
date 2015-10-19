@@ -1,20 +1,20 @@
-﻿using System;
-using Sorter.AbstractElements;
-using Sorter.SwapAndWrite;
+﻿using System.Collections.Generic;
+using MasSortLibrary.AbstractElements;
+using MasSortLibrary.SwapAndWrite;
 
-namespace Sorter.Algorithms
+namespace MasSortLibrary.Algorithms
 {
-    public class BubbleSort<T> : AbstractClass<T> where T : IComparable
+    public class BubbleSort<T> : AbstractClass<T> 
     {
-        protected override void SortAlgorithm()
+        public override void Sort(List<T> mas, IComparer<T> baseOrNewComparator)
         {
-            for (var i = 0; i < Mas.Count-1; i++)
+            for (var i = 0; i < mas.Count-1; i++)
             {
-                for(var j=0;j<Mas.Count-i-1;j++)
+                for(var j=0;j<mas.Count-i-1;j++)
                 {
-                    if (Mas[j].CompareTo(Mas[j + 1]) > 0)
+                    if (baseOrNewComparator.Compare(mas[j],mas[j + 1])>0)                                                
                     {
-                        SwapItems.Swap(Mas,j,j+1);
+                        SwapItems.Swap(mas,j,j+1);
                     }
                 }
             }

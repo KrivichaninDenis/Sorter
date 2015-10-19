@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Sorter.SwapAndWrite;
-using Sorter.Algorithms;
-using Sorter.OneElementInList;
+using MasSortLibrary.Algorithms;
+using MasSortLibrary.OneElementInList;
+using MasSortLibrary.SwapAndWrite;
+using MasSortLibrary.Comparator;
 
 namespace MasSortProject
 {
@@ -46,6 +47,8 @@ namespace MasSortProject
                 new OneElement(2),
                 new OneElement(1)
             };
+            var baseComp=new BaseComparator<int>();
+            var classComp = new NewComparator<OneElement>();
 
             Console.WriteLine("Array before sorting:");
             WriteItems.Write(firstList);
@@ -53,7 +56,7 @@ namespace MasSortProject
 
             //Bubble Sort
             myStopWatch.Start();
-            bublSort.Sort(firstList);
+            bublSort.Sort(firstList,baseComp);
             myStopWatch.Stop();
 
             Console.WriteLine("Array after Bubble sorting:");
@@ -62,7 +65,7 @@ namespace MasSortProject
 
             //Сортировка выбором                          
             myStopWatch.Restart();
-            selSort.Sort(secondList);
+            selSort.Sort(secondList,baseComp);
             myStopWatch.Stop();
 
             Console.WriteLine("Array after Selection sorting:");
@@ -72,7 +75,7 @@ namespace MasSortProject
 
             //Сортировка перемешиванием(разновидность пузырьковой сортировки)                       
             myStopWatch.Restart();
-            shakeSort.Sort(thirdList);
+            shakeSort.Sort(thirdList,baseComp);
             myStopWatch.Stop();
 
             Console.WriteLine("Array after Shaker sorting:");
@@ -81,7 +84,7 @@ namespace MasSortProject
 
             //Сортировка включениями           
             myStopWatch.Restart();
-            incSort.Sort(fourthList);
+            incSort.Sort(fourthList,baseComp);
             myStopWatch.Stop();
 
             Console.WriteLine("Array after Inclusion sorting:");
@@ -89,7 +92,7 @@ namespace MasSortProject
             Console.WriteLine("Time: " + myStopWatch.Elapsed+"\n");
                       
              //Сортировка List<class>                   
-            selSortClass.Sort(classList);
+            selSortClass.Sort(classList,classComp);
                                    
             Console.WriteLine("Array after sorting:");
             WriteItems.Write(classList);             

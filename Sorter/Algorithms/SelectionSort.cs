@@ -1,27 +1,27 @@
-﻿using System;
-using Sorter.AbstractElements;
-using Sorter.SwapAndWrite;
+﻿using System.Collections.Generic;
+using MasSortLibrary.AbstractElements;
+using MasSortLibrary.SwapAndWrite;
 
-namespace Sorter.Algorithms
+namespace MasSortLibrary.Algorithms
 {
-    public class SelectionSort<T>: AbstractClass<T> where T:IComparable
+    public class SelectionSort<T>: AbstractClass<T> 
     {
-        protected override void SortAlgorithm()
+        public override void Sort(List<T> mas, IComparer<T> baseOrNewComparator)
         {
-            for (var i = 0; i < Mas.Count - 1; i++)
+            for (var i = 0; i < mas.Count - 1; i++)
             {
                 var min = i;
-                for (var j = i + 1; j < Mas.Count; j++)
+                for (var j = i + 1; j < mas.Count; j++)
                 {
 
-                    if (Mas[j].CompareTo(Mas[min]) < 0)
+                    if (baseOrNewComparator.Compare( mas[j],mas[min])<0)                         
                     {
                         min = j;
 
                     }                    
                 }
                 if (min == i) continue;
-              SwapItems.Swap(Mas, i, min);                
+              SwapItems.Swap(mas, i, min);                
             }                                    
         }                
     }

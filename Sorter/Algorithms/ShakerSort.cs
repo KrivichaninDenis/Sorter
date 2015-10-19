@@ -1,15 +1,15 @@
-﻿using System;
-using Sorter.AbstractElements;
-using Sorter.SwapAndWrite;
+﻿using System.Collections.Generic;
+using MasSortLibrary.AbstractElements;
+using MasSortLibrary.SwapAndWrite;
 
-namespace Sorter.Algorithms
+namespace MasSortLibrary.Algorithms
 {
-    public class ShakerSort<T> : AbstractClass<T> where T : IComparable
+    public class ShakerSort<T> : AbstractClass<T> 
     {
-        protected override void SortAlgorithm()
+        public override void Sort(List<T> mas, IComparer<T> baseOrNewComparator)
         {           
             var left = 0;
-            var right = Mas.Count - 1;
+            var right = mas.Count - 1;
             var flag = false;
 
             while (!flag)
@@ -18,8 +18,8 @@ namespace Sorter.Algorithms
 
                 for (var i = left; i < right; i++)
                 {
-                    if (Mas[i].CompareTo(Mas[i + 1]) <=0 ) {continue;}
-                    SwapItems.Swap(Mas, i + 1, i);                    
+                    if (baseOrNewComparator.Compare(mas[i], mas[i + 1])<=0) {continue;}
+                    SwapItems.Swap(mas, i + 1, i);                    
                     flag = false;
                 }
 
@@ -27,8 +27,8 @@ namespace Sorter.Algorithms
 
                 for (var i = right; i >= left; i--)
                 {
-                    if (Mas[i + 1].CompareTo(Mas[i]) >= 0 ) {continue;}
-                    SwapItems.Swap(Mas, i + 1, i);                   
+                    if (baseOrNewComparator.Compare(mas[i + 1],mas[i]) >= 0) {continue;}
+                    SwapItems.Swap(mas, i + 1, i);                   
                     flag = false;
                 }
 

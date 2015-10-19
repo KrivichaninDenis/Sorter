@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Sorter.SwapAndWrite
+namespace MasSortLibrary.SwapAndWrite
 {
     public  class SwapItems
     {

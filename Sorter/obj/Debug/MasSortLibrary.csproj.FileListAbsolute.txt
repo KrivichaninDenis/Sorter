@@ -3,3 +3,4 @@ C:\Users\Кривичанин\Documents\Visual Studio 2012\Projects\Sorter\Sorte
 C:\Users\Кривичанин\Documents\Visual Studio 2012\Projects\Sorter\Sorter\bin\Debug\MasSortLibrary.pdb
 C:\Users\Кривичанин\Documents\Visual Studio 2012\Projects\Sorter\Sorter\obj\Debug\MasSortLibrary.dll
 C:\Users\Кривичанин\Documents\Visual Studio 2012\Projects\Sorter\Sorter\obj\Debug\MasSortLibrary.pdb
+C:\Users\Кривичанин\Documents\Visual Studio 2012\Projects\Sorter\Sorter\obj\Debug\MasSortLibrary.csprojResolveAssemblyReference.cache

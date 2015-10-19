@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Sorter.SwapAndWrite
+namespace MasSortLibrary.SwapAndWrite
 {
     public  class WriteItems
     {
