@@ -1,0 +1,5 @@
+c:\users\кривичанин\documents\visual studio 2012\Projects\Sorter\Sorter\bin\Debug\Sorter.pdb
+c:\users\кривичанин\documents\visual studio 2012\Projects\Sorter\Sorter\obj\Debug\Sorter.pdb
+C:\Users\Кривичанин\Documents\Visual Studio 2012\Projects\Sorter\Sorter\bin\Debug\Sorter.dll.config
+C:\Users\Кривичанин\Documents\Visual Studio 2012\Projects\Sorter\Sorter\bin\Debug\Sorter.dll
+C:\Users\Кривичанин\Documents\Visual Studio 2012\Projects\Sorter\Sorter\obj\Debug\Sorter.dll
