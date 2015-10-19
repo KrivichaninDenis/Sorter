@@ -24,29 +24,22 @@ namespace MasSortProject
             var myStopWatch=new Stopwatch();
 
             //Заполнение массива
-            var firstList = new List<int>();
-            var r=new Random();
-
-            for (var i = 0; i < 20; i++)
-            {
-                firstList.Add(r.Next(-100,100));
-            }
+            var firstList = new List<int>{15,7,3,22,8,9,8,31,1,0,99,521};
+            
             var secondList = firstList;
             var thirdList = firstList;
             var fourthList = firstList;
           
             var classList = new List<OneElement>
-            {
-                new OneElement(9),
-                new OneElement(8),
-                new OneElement(7),
-                new OneElement(6),
+            {                
                 new OneElement(5),
                 new OneElement(4),
                 new OneElement(3),
                 new OneElement(2),
                 new OneElement(1)
             };
+
+            //Create two comparator
             var baseComp=new BaseComparator<int>();
             var classComp = new NewComparator<OneElement>();
 
@@ -58,44 +51,38 @@ namespace MasSortProject
             myStopWatch.Start();
             bublSort.Sort(firstList,baseComp);
             myStopWatch.Stop();
-
-            Console.WriteLine("Array after Bubble sorting:");
-            WriteItems.Write(firstList);
-            Console.WriteLine("Time: " + myStopWatch.Elapsed + "\n");
+            OutTime("Bubble",myStopWatch,firstList);
+           
 
             //Сортировка выбором                          
             myStopWatch.Restart();
             selSort.Sort(secondList,baseComp);
-            myStopWatch.Stop();
-
-            Console.WriteLine("Array after Selection sorting:");
-            WriteItems.Write(firstList); 
-            Console.WriteLine("Time: "+myStopWatch.Elapsed+"\n");
-            
+            myStopWatch.Stop();            
+            OutTime("Selection", myStopWatch, secondList);
 
             //Сортировка перемешиванием(разновидность пузырьковой сортировки)                       
             myStopWatch.Restart();
             shakeSort.Sort(thirdList,baseComp);
-            myStopWatch.Stop();
+            myStopWatch.Stop();            
+            OutTime("Shaker", myStopWatch, thirdList);
 
-            Console.WriteLine("Array after Shaker sorting:");
-            WriteItems.Write(firstList);
-            Console.WriteLine("Time: " + myStopWatch.Elapsed+"\n");            
 
             //Сортировка включениями           
             myStopWatch.Restart();
             incSort.Sort(fourthList,baseComp);
-            myStopWatch.Stop();
+            myStopWatch.Stop();           
+            OutTime("Inclusion", myStopWatch, fourthList);          
 
-            Console.WriteLine("Array after Inclusion sorting:");
-            WriteItems.Write(firstList);
-            Console.WriteLine("Time: " + myStopWatch.Elapsed+"\n");
-                      
              //Сортировка List<class>                   
-            selSortClass.Sort(classList,classComp);
-                                   
-            Console.WriteLine("Array after sorting:");
-            WriteItems.Write(classList);             
+            selSortClass.Sort(classList,classComp);                                              
+            OutTime("Class", myStopWatch, classList);        
+        }
+
+        public static void OutTime<T>(string typeSort, Stopwatch stWatch,List<T> list )
+        {
+            Console.WriteLine("Array after "+typeSort+" sorting:");
+            WriteItems.Write(list);
+            Console.WriteLine("Time: " + stWatch.Elapsed + "\n");
         }
     }
 }
